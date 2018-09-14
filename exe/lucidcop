@@ -14,6 +14,10 @@ OptionParser.new do |opts|
   opts.on('--enable [CHECKS]', 'Enable checks. Separate by ","') do |checks|
     options[:enable] = checks.split(',')
   end
+
+  opts.on('-s', '--specpath [spec/s]', 'Feature specs path') do |spec|
+    options[:specs] = spec
+  end
 end.parse!
 
 cop = LucidCop::LucidCop.new
@@ -21,5 +25,13 @@ cop = LucidCop::LucidCop.new
 cop.disable(options[:disable]) if options.key? :disable
 cop.enable options[:enable] if options.key? :enable
 
+files = ARGV.map { |pattern| Dir.glob(pattern) }.flatten
+files += Dir.glob(options[:files]) if options.key? :files
+
+if ARGV.empty? && !options.key?(:specs)
+  files = Dir.glob('features/**/*.feature')
+end
+
 puts("******************")
 puts(cop.inspect)
+puts("Files: #{files}")
