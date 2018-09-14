@@ -12,8 +12,23 @@ module LucidCop
 
     def initialize
       @config = Config.new(DEFAULT_CONFIG)
-      puts @config.inspect
       puts "Cops: #{COP}"
+    end
+
+    def enabled(name, value)
+      @config.config[name]['Enabled'] = value if @config.config.key?(name)
+    end
+
+    def disable(disabled_cops)
+      disabled_cops.each do |cop|
+        enabled cop, false
+      end
+    end
+
+    def enable(enabled_cops)
+      enabled_cops.each do |cop|
+        enabled cop, true
+      end
     end
   end
 end

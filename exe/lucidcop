@@ -6,6 +6,20 @@ options = {}
 
 OptionParser.new do |opts|
   opts.banner = 'Usage: lucidcop [files]'
+
+  opts.on('--disable [CHECKS]', 'Disable checks. Separate by ","') do |checks|
+    options[:disable] = checks.split(',')
+  end
+
+  opts.on('--enable [CHECKS]', 'Enable checks. Separate by ","') do |checks|
+    options[:enable] = checks.split(',')
+  end
 end.parse!
 
 cop = LucidCop::LucidCop.new
+
+cop.disable(options[:disable]) if options.key? :disable
+cop.enable options[:enable] if options.key? :enable
+
+puts("******************")
+puts(cop.inspect)

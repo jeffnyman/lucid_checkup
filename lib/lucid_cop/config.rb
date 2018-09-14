@@ -3,7 +3,7 @@ require "yaml"
 module LucidCop
   class Config
     attr_reader :config
-    
+
     def initialize(path)
       @path = path
       @config = load_config || ''
