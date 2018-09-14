@@ -12,9 +12,9 @@ module LucidCop
     DEFAULT_CONFIG = Dir.glob(File.join(DEFAULT_FILE)).first.freeze
     COP = Cop.descendants
 
-    def initialize
+    def initialize(path = nil)
       @files = {}
-      @config = Config.new(DEFAULT_CONFIG)
+      @config = Config.new(path || DEFAULT_CONFIG)
       puts "Cops: #{COP}"
     end
 
