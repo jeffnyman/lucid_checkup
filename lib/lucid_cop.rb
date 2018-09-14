@@ -2,7 +2,7 @@ require "gherkin/parser"
 
 require "lucid_cop/config"
 require "lucid_cop/cop"
-require "lucid_cop/cops/avoid_dumb_stuff"
+require "lucid_cop/cops/avoid_punctuation"
 
 module LucidCop
   class LucidCop
@@ -25,7 +25,14 @@ module LucidCop
         new_cop = cop.new
         new_cop_class = new_cop.class.name.split('::').last
         cop_enabled = @config.config[new_cop_class]['Enabled']
+        confirm_enabled(new_cop) if cop_enabled
         @cop.push new_cop if cop_enabled
+      end
+    end
+
+    def confirm_enabled(cop)
+      @config.config[cop.class.name.split('::').last].each do |setting, _|
+        next if setting.downcase.casecmp('enabled').zero?
       end
     end
 

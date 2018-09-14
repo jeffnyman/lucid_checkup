@@ -20,9 +20,9 @@ RSpec.describe LucidCop::LucidCop do
 
   describe "#enable" do
     it "enables the cop passed in" do
-      subject.enable ["Test01"]
+      subject.enable ["AvoidPunctuation"]
       expect(subject.instance_variable_get(:@config).config).to include(
-        'Test01' => { 'Enabled' => true, 'Something' => false }
+        'AvoidPunctuation' => { 'Enabled' => true }
       )
     end
   end
@@ -32,7 +32,7 @@ RSpec.describe LucidCop::LucidCop do
 
     it "will load the expected values from the config file" do
       expect(subject.instance_variable_get(:@config).config).to include(
-        'Test01' => { 'Something' => false }
+        'AvoidPunctuation' => { 'Enabled' => true }
       )
     end
   end
@@ -43,13 +43,13 @@ RSpec.describe LucidCop::LucidCop do
     let(:file_content) do
       <<-CONTENT
 ---
-Test04:
+AvoidDumbStuff:
     Enabled: false
       CONTENT
     end
     it "will load and merge the expected values from the user config file" do
       expect(subject.instance_variable_get(:@config).config).to include(
-        'Test04' => { 'Enabled' => false }
+        'AvoidDumbStuff' => { 'Enabled' => false }
       )
     end
   end
