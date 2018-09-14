@@ -32,6 +32,11 @@ if ARGV.empty? && !options.key?(:specs)
   files = Dir.glob('features/**/*.feature')
 end
 
+files.each do |file|
+  puts("Analyzing #{file}")
+  cop.analyze(file)
+end
+
 puts("******************")
 puts(cop.inspect)
 puts("Files: #{files}")

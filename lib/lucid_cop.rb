@@ -1,3 +1,5 @@
+require "gherkin/parser"
+
 require "lucid_cop/config"
 require "lucid_cop/cop"
 require "lucid_cop/cops/avoid_dumb_stuff"
@@ -11,8 +13,23 @@ module LucidCop
     COP = Cop.descendants
 
     def initialize
+      @files = {}
       @config = Config.new(DEFAULT_CONFIG)
       puts "Cops: #{COP}"
+    end
+
+    def analyze(file)
+      @files[file] = parse(file)
+    end
+
+    def parse(file)
+      to_json(File.read(file))
+    end
+
+    def to_json(input)
+      parser = Gherkin::Parser.new
+      scanner = Gherkin::TokenScanner.new(input)
+      parser.parse(scanner)
     end
 
     def enabled(name, value)

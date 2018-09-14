@@ -28,6 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop"
   spec.add_development_dependency "pry"
 
+  spec.add_runtime_dependency "gherkin", [">= 4.0.0", "< 6.0"]
+
   spec.post_install_message = %{
 (::) (::) (::) (::) (::) (::) (::) (::) (::) (::) (::) (::)
   Lucid Checkup #{LucidCheckup::VERSION} has been installed.
