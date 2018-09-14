@@ -39,5 +39,7 @@ files.each do |file|
 end
 
 puts("******************")
-puts(cop.inspect)
-puts("Files: #{files}")
+# puts(cop.inspect)
+# puts("Files: #{files}")
+
+exit cop.report

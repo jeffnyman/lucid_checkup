@@ -16,7 +16,7 @@ module LucidCop
       @files = {}
       @cop = []
       @config = Config.new(path || DEFAULT_CONFIG)
-      puts "Cops: #{COP}"
+      puts "(lucid_cop|initialize) Cops: #{COP}"
     end
 
     def setup_cops
@@ -28,6 +28,14 @@ module LucidCop
         confirm_enabled(new_cop) if cop_enabled
         @cop.push new_cop if cop_enabled
       end
+    end
+
+    def report
+      issues = @cop.map do |cop|
+        cop.check_files(@files)
+      end
+
+      return 0
     end
 
     def confirm_enabled(cop)
