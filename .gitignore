@@ -1,0 +1,34 @@
+# Ruby generated
+
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/spec/coverage/
+/tmp/
+
+/Gemfile.lock
+
+# rspec failure tracking
+.rspec_status
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.settings/
+.classpath
+.project
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
