@@ -14,8 +14,19 @@ module LucidCop
 
     def initialize(path = nil)
       @files = {}
+      @cop = []
       @config = Config.new(path || DEFAULT_CONFIG)
       puts "Cops: #{COP}"
+    end
+
+    def setup_cops
+      @cop = []
+      COP.each do |cop|
+        new_cop = cop.new
+        new_cop_class = new_cop.class.name.split('::').last
+        cop_enabled = @config.config[new_cop_class]['Enabled']
+        @cop.push new_cop if cop_enabled
+      end
     end
 
     def analyze(file)

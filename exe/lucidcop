@@ -24,6 +24,7 @@ cop = LucidCop::LucidCop.new
 
 cop.disable(options[:disable]) if options.key? :disable
 cop.enable options[:enable] if options.key? :enable
+cop.setup_cops
 
 files = ARGV.map { |pattern| Dir.glob(pattern) }.flatten
 files += Dir.glob(options[:files]) if options.key? :files
