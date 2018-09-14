@@ -1,2 +1,11 @@
 #!/usr/bin/env ruby
-require "lucid_checkup"
+require "lucid_cop"
+require "optparse"
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = 'Usage: lucidcop [files]'
+end.parse!
+
+cop = LucidCop::LucidCop.new
