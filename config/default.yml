@@ -12,3 +12,5 @@ MissingScenarioAction:
   Enabled: true
 MissingScenarioResult:
   Enabled: true
+DuplicateScenarioNames:
+  Enabled: true
