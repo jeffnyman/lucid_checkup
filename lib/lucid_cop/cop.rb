@@ -73,5 +73,9 @@ module LucidCop
     def add_error(references, description = nil)
       @issues.push Error.new(name, references, description)
     end
+
+    def add_warning(references, description = nil)
+      @issues.push Warning.new(name, references, description)
+    end
   end
 end

@@ -19,4 +19,13 @@ module LucidCop
       result
     end
   end
+
+  class Warning < Issue
+    def render
+      result = "#{yellow(@name)} (Warning)"
+      result += " - #{@description}" unless @description.nil?
+      result += "\n  " + green(@references.uniq * "\n  ")
+      result
+    end
+  end
 end
