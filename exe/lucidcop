@@ -18,12 +18,17 @@ OptionParser.new do |opts|
   opts.on('-s', '--specpath [spec/s]', 'Feature specs path') do |spec|
     options[:specs] = spec
   end
+
+  opts.on('-v', '--[no-]verbose', 'Run with verbose output') do |verbose|
+    options[:verbose] = verbose
+  end
 end.parse!
 
 cop = LucidCop::LucidCop.new
 
 cop.disable(options[:disable]) if options.key? :disable
 cop.enable options[:enable] if options.key? :enable
+cop.set_verbose(options[:verbose]) if options.key? :verbose
 cop.setup_cops
 
 files = ARGV.map { |pattern| Dir.glob(pattern) }.flatten
@@ -37,9 +42,5 @@ files.each do |file|
   puts("Analyzing #{file}")
   cop.analyze(file)
 end
-
-puts("******************")
-# puts(cop.inspect)
-# puts("Files: #{files}")
 
 exit cop.report

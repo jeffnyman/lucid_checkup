@@ -16,7 +16,7 @@ module LucidCop
       @files = {}
       @cop = []
       @config = Config.new(path || DEFAULT_CONFIG)
-      puts "(lucid_cop|initialize) Cops: #{COP}"
+      @verbose = false
     end
 
     def setup_cops
@@ -30,6 +30,10 @@ module LucidCop
       end
     end
 
+    def set_verbose(value)
+      @verbose = true if value
+    end
+
     def report
       issues = @cop.map do |cop|
         cop.check_files(@files)
@@ -38,7 +42,8 @@ module LucidCop
 
       display(issues)
 
-      return 0
+      return 0 if issues.select { |issue| issue.class == Error }.empty?
+      -1
     end
 
     def confirm_enabled(cop)
@@ -78,7 +83,7 @@ module LucidCop
     end
 
     def display(issues)
-      puts 'There are no issues' if issues.empty?
+      puts "No issues found." if issues.empty? && @verbose
       issues.each { |issue| puts issue.render }
     end
   end
