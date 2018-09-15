@@ -70,6 +70,14 @@ module LucidCop
       end
     end
 
+    def filled_scenarios
+      scenarios do |file, feature, scenario|
+        next unless scenario.include? :steps
+        next if scenario[:steps].empty?
+        yield(file, feature, scenario)
+      end
+    end
+
     def add_error(references, description = nil)
       @issues.push Error.new(name, references, description)
     end

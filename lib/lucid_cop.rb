@@ -6,6 +6,8 @@ require "lucid_cop/cops/avoid_punctuation"
 require "lucid_cop/cops/invalid_file_name"
 require "lucid_cop/cops/missing_feature_name"
 require "lucid_cop/cops/missing_scenario_name"
+require "lucid_cop/cops/missing_feature_description"
+require "lucid_cop/cops/missing_scenario_action"
 
 module LucidCop
   class LucidCop

@@ -6,3 +6,7 @@ MissingFeatureName:
   Enabled: true
 MissingScenarioName:
   Enabled: true
+MissingFeatureDescription:
+  Enabled: true
+MissingScenarioAction:
+  Enabled: true
