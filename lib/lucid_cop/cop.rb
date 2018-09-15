@@ -56,6 +56,14 @@ module LucidCop
       self.class.name.split('::').last
     end
 
+    def features
+      @files.each do |file, content|
+        feature = content[:feature]
+        next if feature.nil?
+        yield(file, feature)
+      end
+    end
+
     def scenarios
       elements do |file, feature, scenario|
         yield(file, feature, scenario)

@@ -2,3 +2,7 @@ AvoidPunctuation:
   Enabled: true
 InvalidFileName:
   Enabled: true
+MissingFeatureName:
+  Enabled: true
+MissingScenarioName:
+  Enabled: true
