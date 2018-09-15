@@ -10,3 +10,5 @@ MissingFeatureDescription:
   Enabled: true
 MissingScenarioAction:
   Enabled: true
+MissingScenarioResult:
+  Enabled: true

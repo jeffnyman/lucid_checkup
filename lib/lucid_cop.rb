@@ -8,6 +8,7 @@ require "lucid_cop/cops/missing_feature_name"
 require "lucid_cop/cops/missing_scenario_name"
 require "lucid_cop/cops/missing_feature_description"
 require "lucid_cop/cops/missing_scenario_action"
+require "lucid_cop/cops/missing_scenario_result"
 
 module LucidCop
   class LucidCop
