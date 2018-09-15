@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
 
   spec.add_runtime_dependency "gherkin", [">= 4.0.0", "< 6.0"]
+  spec.add_runtime_dependency "term-ansicolor", ["~> 1.3", ">= 1.3.2"]
 
   spec.post_install_message = %{
 (::) (::) (::) (::) (::) (::) (::) (::) (::) (::) (::) (::)

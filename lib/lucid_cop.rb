@@ -33,7 +33,10 @@ module LucidCop
     def report
       issues = @cop.map do |cop|
         cop.check_files(@files)
-      end
+        cop.issues
+      end.flatten
+
+      display(issues)
 
       return 0
     end
@@ -72,6 +75,11 @@ module LucidCop
       enabled_cops.each do |cop|
         enabled cop, true
       end
+    end
+
+    def display(issues)
+      puts 'There are no issues' if issues.empty?
+      issues.each { |issue| puts issue.render }
     end
   end
 end

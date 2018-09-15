@@ -1,11 +1,16 @@
+require "lucid_cop/issue"
+
 module LucidCop
   class Cop
+    attr_reader :issues
+
     def self.descendants
       ObjectSpace.each_object(::Class).select { |klass| klass < self }
     end
 
     def initialize
       @files = {}
+      @issues = []
     end
 
     def check
@@ -27,11 +32,6 @@ module LucidCop
 
     def elements
       @files.each do |file, content|
-        # ############################
-        puts file
-        puts content
-        # ############################
-
         feature = content[:feature]
         next if feature.nil?
         next unless feature.key? :children
@@ -48,13 +48,18 @@ module LucidCop
       line
     end
 
+    def name
+      self.class.name.split('::').last
+    end
+
     def scenarios
       elements do |file, feature, scenario|
         yield(file, feature, scenario)
       end
     end
 
-    def add_error(references)
+    def add_error(references, description = nil)
+      @issues.push Error.new(name, references, description)
     end
   end
 end

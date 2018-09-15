@@ -10,8 +10,6 @@ module LucidCop
 
         scenario[:steps].each do |step|
           references = [reference(file, feature, scenario, step)]
-          puts(references)
-          # add_error(references) if step[:text].strip.end_with? '.'
           add_error(references) if step[:text].strip.end_with?(*PUNCTUATION)
         end
       end
