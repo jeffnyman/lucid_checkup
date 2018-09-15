@@ -39,7 +39,6 @@ if ARGV.empty? && !options.key?(:specs)
 end
 
 files.each do |file|
-  puts("Analyzing #{file}")
   cop.analyze(file)
 end
 

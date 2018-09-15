@@ -30,6 +30,10 @@ module LucidCop
       result
     end
 
+    def files
+      @files.each_key { |file| yield file }
+    end
+
     def elements
       @files.each do |file, content|
         feature = content[:feature]

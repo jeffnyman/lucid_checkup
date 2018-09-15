@@ -1,2 +1,4 @@
 AvoidPunctuation:
   Enabled: true
+InvalidFileName:
+  Enabled: true
