@@ -18,3 +18,5 @@ OverlyLongScenario:
   Enabled: true
 OverlyLongSteps:
   Enabled: true
+TooManyTags:
+  Enabled: true

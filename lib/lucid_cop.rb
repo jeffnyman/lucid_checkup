@@ -12,6 +12,7 @@ require "lucid_cop/cops/missing_scenario_result"
 require "lucid_cop/cops/duplicate_scenario_names"
 require "lucid_cop/cops/overly_long_scenario"
 require "lucid_cop/cops/overly_long_steps"
+require "lucid_cop/cops/too_many_tags"
 
 module LucidCop
   class LucidCop
