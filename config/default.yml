@@ -20,3 +20,7 @@ OverlyLongSteps:
   Enabled: true
 TooManyTags:
   Enabled: true
+AvoidNonContextBackgrounds:
+  Enabled: true
+AvoidSingleScenarioBackgrounds:
+  Enabled: true

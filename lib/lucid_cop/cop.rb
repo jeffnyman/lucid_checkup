@@ -66,6 +66,7 @@ module LucidCop
 
     def scenarios
       elements do |file, feature, scenario|
+        next if scenario[:type] == :Background
         yield(file, feature, scenario)
       end
     end
@@ -74,6 +75,13 @@ module LucidCop
       scenarios do |file, feature, scenario|
         next unless scenario.include? :steps
         next if scenario[:steps].empty?
+        yield(file, feature, scenario)
+      end
+    end
+
+    def backgrounds
+      elements do |file, feature, scenario|
+        next unless scenario[:type] == :Background
         yield(file, feature, scenario)
       end
     end
