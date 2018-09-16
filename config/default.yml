@@ -14,3 +14,5 @@ MissingScenarioResult:
   Enabled: true
 DuplicateScenarioNames:
   Enabled: true
+OverlyLongSteps:
+  Enabled: true

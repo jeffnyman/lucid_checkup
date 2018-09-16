@@ -78,6 +78,13 @@ module LucidCop
       end
     end
 
+    def steps
+      elements do |file, feature, scenario|
+        next unless scenario.include? :steps
+        scenario[:steps].each { |step| yield(file, feature, scenario, step) }
+      end
+    end
+
     def add_error(references, description = nil)
       @issues.push Error.new(name, references, description)
     end
