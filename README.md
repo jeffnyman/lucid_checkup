@@ -26,7 +26,25 @@ You can also install Lucid Checkup just as you would any other gem:
 
 ## Usage
 
-Usage instructions will be coming soon.
+Lucid Checkup provides a Rubocop-like functionality called Lucidcop.
+
+You can check an entire directory of features this like
+
+`lucidcop features/*.feature`
+
+Note that the default execution is to check all `.feature` files in a `features` directory. So the above command could have more easily been written as:
+
+`lucidcop`
+
+You can also run checks against a specific feature file:
+
+`lucidcop features/one_of_my_features.feature`
+
+Lucidcop provides errors and warnings. If there is at least one error, the return code will be set to -1. Otherwise, the return code will be set to 0. Warnings are for issues that do not influence the return code.
+
+You can enable or disable certain cops with the use `--disable COP` or `--enable COP` and replacing "COP" with the name of the check.
+
+Lucidcop provides its own configuration file for the execution. This file is called `default.yml` and will be used internally. If you have a custom configuration that you would like to run instead of passing enable and disable flags through the command line or instead of relying on the defaults, you can configure a `.lucidcop.yml` file that will be loaded on execution.
 
 ## Development
 
