@@ -42,7 +42,7 @@ module LucidCop
       end
     end
 
-    def set_verbose(value)
+    def enable_verbose(value)
       @verbose = true if value
     end
 
@@ -96,7 +96,7 @@ module LucidCop
 
     def display(issues)
       puts "No issues found." if issues.empty? && @verbose
-      issues.each { |issue| puts ""; puts issue.render }
+      issues.each { |issue| puts "\n#{issue.render}" }
     end
   end
 end

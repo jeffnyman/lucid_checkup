@@ -4,7 +4,9 @@ module LucidCop
   class AvoidSingleScenarioBackgrounds < Cop
     def check
       backgrounds do |file, feature, background|
-        scenarios = feature[:children].reject { |element| element[:type] == :Background }
+        scenarios = feature[:children].reject do |element|
+          element[:type] == :Background
+        end
         next if scenarios.length >= 2
 
         references = [reference(file, feature, background)]

@@ -68,3 +68,8 @@ Metrics/ParameterLists:
 # Remove execute permissions check.
 Lint/ScriptPermission:
   Enabled: false
+
+# This is being modified from the default because some of the code reads
+# better with conditional checks on the end of statements.
+Metrics/LineLength:
+  Max: 85
