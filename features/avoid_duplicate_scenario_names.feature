@@ -1,4 +1,4 @@
-Feature: Duplicate Scenario Names
+Feature: Avoid Duplicate Scenario Names
 
   This cop looks for cases where there are multiple scenarios in a
   feature file with the same name.

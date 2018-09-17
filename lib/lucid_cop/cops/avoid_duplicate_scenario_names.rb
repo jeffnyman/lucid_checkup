@@ -1,7 +1,7 @@
 require "lucid_cop/cop"
 
 module LucidCop
-  class DuplicateScenarioNames < Cop
+  class AvoidDuplicateScenarioNames < Cop
     def check
       references_by_name = Hash.new []
 

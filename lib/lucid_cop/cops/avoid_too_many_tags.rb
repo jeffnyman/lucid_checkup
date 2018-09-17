@@ -2,7 +2,7 @@ require "lucid_cop/cop"
 require "lucid_cop/cops/mixins/tag_collection"
 
 module LucidCop
-  class TooManyTags < Cop
+  class AvoidTooManyTags < Cop
     include TagCollection
 
     def check

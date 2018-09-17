@@ -1,5 +1,13 @@
 AvoidPunctuation:
   Enabled: true
+AvoidDuplicateScenarioNames:
+  Enabled: true
+AvoidNonContextBackgrounds:
+  Enabled: true
+AvoidSingleScenarioBackgrounds:
+  Enabled: true
+AvoidTooManyTags:
+  Enabled: true
 InvalidFileName:
   Enabled: true
 MissingFeatureName:
@@ -14,17 +22,9 @@ MissingScenarioAction:
   Enabled: true
 MissingScenarioResult:
   Enabled: true
-DuplicateScenarioNames:
-  Enabled: true
 OverlyLongScenario:
   Enabled: true
 OverlyLongSteps:
   Enabled: true
 OverlyDetailedScenario:
-  Enabled: true
-TooManyTags:
-  Enabled: true
-AvoidNonContextBackgrounds:
-  Enabled: true
-AvoidSingleScenarioBackgrounds:
   Enabled: true
