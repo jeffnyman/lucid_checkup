@@ -18,6 +18,8 @@ OverlyLongScenario:
   Enabled: true
 OverlyLongSteps:
   Enabled: true
+OverlyDetailedScenario:
+  Enabled: true
 TooManyTags:
   Enabled: true
 AvoidNonContextBackgrounds:

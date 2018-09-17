@@ -8,7 +8,7 @@ module LucidCop
     def check
       scenarios do |file, feature, scenario|
         tags = collect_tags(feature) + collect_tags(scenario)
-        next unless tags.length >= 3
+        next unless tags.length > 3
         references = [reference(file, feature, scenario)]
         add_warning(references, "Used #{tags.length} Tags")
       end
