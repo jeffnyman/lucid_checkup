@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+require "lucid_check"
+
+help_text = "Lucid Check
+Calling Lucid Check with no arguments will run it against the current directory.
+
+  -f,  --features <feature_path>            : Path to features directory.
+  -p,  --project <project_root>             : Root directory of project.
+"
+
+def find_item_by_match(list, regex)
+  list.each do |item|
+    return list.index(item) if item =~ regex
+  end
+  nil
+end
+
+def build_execution_profile(argv)
+  spec_repo_elements = {
+    features_location: /-f|--features/,
+    project_location: /-p|--project/
+  }
+
+  profile_hash = {}
+
+  spec_repo_elements.each do |symbol, regex|
+    index_of_item = find_item_by_match(argv, regex)
+    puts(index_of_item)
+
+    profile_hash[symbol] = argv[index_of_item + 1] unless index_of_item.nil?
+  end
+
+  profile_hash
+end
+
+if ARGV.include?("-h") || ARGV.include?("--help")
+  puts help_text
+  exit
+end
+
+profile = build_execution_profile(ARGV)
+puts(profile)
+@lucid_check = LucidCheck::CLI.new(profile)
+
+puts "Completed Checkup."
