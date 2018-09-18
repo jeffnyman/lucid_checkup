@@ -10,6 +10,8 @@ AvoidTooManyTags:
   Enabled: true
 AvoidNonDeclarative:
   Enabled: true
+AvoidUnusedVariables:
+  Enabled: true
 InvalidFileName:
   Enabled: true
 MissingFeatureName:
@@ -23,6 +25,8 @@ MissingFeatureDescription:
 MissingScenarioAction:
   Enabled: true
 MissingScenarioResult:
+  Enabled: true
+MissingVariableName:
   Enabled: true
 OverlyLongScenario:
   Enabled: true
