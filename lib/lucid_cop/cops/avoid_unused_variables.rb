@@ -11,7 +11,9 @@ module LucidCop
 
           example[:tableHeader][:cells].map { |cell| cell[:value] }.each do |variable|
             references = [reference(file, feature, scenario)]
-            add_error(references, "'<#{variable}>' is unused") unless used?(variable, scenario)
+            unless used?(variable, scenario)
+              add_error(references, "'<#{variable}>' is unused")
+            end
           end
         end
       end
@@ -32,7 +34,8 @@ module LucidCop
     end
 
     def used_in_docstring?(variable, step)
-      step[:argument][:type] == :DocString && step[:argument][:content].include?(variable)
+      step[:argument][:type] == :DocString &&
+        step[:argument][:content].include?(variable)
     end
 
     def used_in_table?(variable, step)

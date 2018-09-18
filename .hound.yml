@@ -72,4 +72,4 @@ Lint/ScriptPermission:
 # This is being modified from the default because some of the code reads
 # better with conditional checks on the end of statements.
 Metrics/LineLength:
-  Max: 85
+  Max: 86
