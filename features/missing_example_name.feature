@@ -4,9 +4,9 @@ Feature: Missing Example Name
   but the examples group does not have a name.
 
   Scenario Outline: Valid Scenario Outline Without Example Names
-    Given some context
-    When  some <action>
-    Then  some <result>
+    Given some context is provided
+    When  some <action> is taken
+    Then  some <result> is observed
 
     Examples:
       | action | result |

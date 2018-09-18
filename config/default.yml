@@ -8,6 +8,8 @@ AvoidSingleScenarioBackgrounds:
   Enabled: true
 AvoidTooManyTags:
   Enabled: true
+AvoidNonDeclarative:
+  Enabled: true
 InvalidFileName:
   Enabled: true
 MissingFeatureName:

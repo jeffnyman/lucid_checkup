@@ -6,6 +6,6 @@ Feature: Avoid Punctuation
   predicate scenarios.
 
   Scenario: Steps With Period
-    Given some context.
-    When  some action.
-    Then  some result.
+    Given some context is provided.
+    When  some action is taken.
+    Then  some result is observed.

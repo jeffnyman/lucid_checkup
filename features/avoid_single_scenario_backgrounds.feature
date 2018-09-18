@@ -7,6 +7,6 @@ Feature: Avoid Single Scenario Backgrounds
     Given some background context
 
   Scenario: Single Scenario with Background
-    Given some context
-    When  some action
-    Then  some result
+    Given some context is provided
+    When  some action is taken
+    Then  some result is observed

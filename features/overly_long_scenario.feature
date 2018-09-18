@@ -4,13 +4,13 @@ Feature: Overly Long Scenario
   steps in them.
 
   Scenario: Overly Long Scenario
-    Given some context
-    And   some other bit of context
-    And   yet some other bit of context
-    When  some action
-    And   some other action
-    And   yet another action
-    Then  some result
-    And   some related result
-    And   some other related result
-    And   yet some other result
+    Given some context is provided
+    And   some other bit of context is provided
+    And   yet some other bit of context is provided
+    When  some action is taken
+    And   some other action is taken
+    And   yet another action is taken
+    Then  some result is observed
+    And   some related result is observed
+    And   some other related result is observed
+    And   yet some other result is observed

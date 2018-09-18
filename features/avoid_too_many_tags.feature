@@ -4,6 +4,6 @@ Feature: Too Many Tags
 
   @tag1 @tag2 @tag3 @tag4
   Scenario: Simple Scenario with Too Many Tags
-    Given some context
-    When  some action
-    Then  some result
+    Given some context is provided
+    When  some action is taken
+    Then  some result is observed

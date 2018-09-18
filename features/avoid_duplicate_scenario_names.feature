@@ -4,16 +4,16 @@ Feature: Avoid Duplicate Scenario Names
   feature file with the same name.
 
   Scenario: Duplicate Name
-    Given some context
-    When  some action
-    Then  some result
+    Given some context is provided
+    When  taking some action
+    Then  some result is observed
 
   Scenario: Duplicate Name
-    Given some context
-    When  some action
-    Then  some result
+    Given some context is provided
+    When  taking some action
+    Then  some result is observed
 
   Scenario: Unique Name
-    Given some context
-    When  some action
-    Then  some result
+    Given some context is provided
+    When  taking some action
+    Then  some result is observed
