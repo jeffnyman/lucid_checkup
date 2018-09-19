@@ -9,7 +9,7 @@ module LucidCop
         end
         next unless then_steps.empty?
         references = [reference(file, feature, scenario)]
-        add_error(references, 'No \'Then\'-Step')
+        add_error(references, 'the scenario has no \'Then\' step')
       end
     end
   end

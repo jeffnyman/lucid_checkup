@@ -10,7 +10,7 @@ module LucidCop
         tags = collect_tags(feature) + collect_tags(scenario)
         next unless tags.length > 3
         references = [reference(file, feature, scenario)]
-        add_warning(references, "Used #{tags.length} Tags")
+        add_warning(references, "uses #{tags.length} tags")
       end
     end
   end

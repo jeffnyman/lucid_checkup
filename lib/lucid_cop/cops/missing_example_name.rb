@@ -11,7 +11,7 @@ module LucidCop
           name = example.key?(:name) ? example[:name].strip : ''
           next unless name.empty?
           references = [reference(file, feature, scenario)]
-          add_error(references, 'No Example Name')
+          add_error(references, 'the example section provided has no name')
         end
       end
     end

@@ -9,7 +9,7 @@ module LucidCop
         end
         next unless when_steps.empty?
         references = [reference(file, feature, scenario)]
-        add_error(references, 'No \'When\'-Step')
+        add_error(references, 'the scenario has no \'When\' step')
       end
     end
   end

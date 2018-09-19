@@ -7,7 +7,7 @@ module LucidCop
       filled_scenarios do |file, feature, scenario|
         scenario[:steps].each do |step|
           references = [reference(file, feature, scenario, step)]
-          add_warning(references, 'no verb') unless verb?(step)
+          add_warning(references, 'non-declarative sentence') unless verb?(step)
         end
       end
     end

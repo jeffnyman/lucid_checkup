@@ -12,15 +12,15 @@ AvoidNonDeclarative:
   Enabled: true
 AvoidUnusedVariables:
   Enabled: true
-InvalidFileName:
+PreferFeatureDescription:
+  Enabled: true
+PreferSnakeCaseFileName:
   Enabled: true
 MissingFeatureName:
   Enabled: true
 MissingScenarioName:
   Enabled: true
 MissingExampleName:
-  Enabled: true
-MissingFeatureDescription:
   Enabled: true
 MissingScenarioAction:
   Enabled: true
@@ -30,7 +30,7 @@ MissingVariableName:
   Enabled: true
 OverlyLongScenario:
   Enabled: true
-OverlyLongSteps:
+OverlyLongStep:
   Enabled: true
 OverlyDetailedScenario:
   Enabled: true

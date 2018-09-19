@@ -6,6 +6,7 @@ Feature: Avoid Non-Context Backgrounds
   Background:
     Given some background context is provided
     When  taking some background action
+    Then  make sure that context occurs
 
   Scenario: Simple Scenario with Background
     Given some context is provided

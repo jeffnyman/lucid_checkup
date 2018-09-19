@@ -4,16 +4,20 @@ module LucidCop
   class MissingVariableName < Cop
     def check
       filled_scenarios do |file, feature, scenario|
-        known_vars = Set.new known_variables(scenario)
+        known_vars = Set.new(known_variables(scenario))
 
         scenario[:steps].each do |step|
           step_vars(step).each do |used_var|
             next if known_vars.include?(used_var)
             references = [reference(file, feature, scenario)]
-            add_error(references, "'<#{used_var}>' is unknown")
+            add_error(references, report(used_var))
           end
         end
       end
+    end
+
+    def report(value)
+      "the variable parameter '<#{value}>' is referenced but is not declared"
     end
 
     def step_vars(step)

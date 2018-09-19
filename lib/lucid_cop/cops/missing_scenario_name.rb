@@ -7,7 +7,7 @@ module LucidCop
         name = scenario.key?(:name) ? scenario[:name].strip : ''
         references = [reference(file, feature, scenario)]
         next unless name.empty?
-        add_error(references, 'No Scenario Name')
+        add_error(references, 'no scenario name is provided')
       end
     end
   end

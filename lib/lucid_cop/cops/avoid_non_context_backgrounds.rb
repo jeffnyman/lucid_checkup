@@ -10,7 +10,7 @@ module LucidCop
         end
         next if invalid_steps.empty?
         references = [reference(file, feature, background, invalid_steps[0])]
-        add_error(references, 'Just Given Steps allowed')
+        add_error(references, 'Only given steps allowed in background')
       end
     end
   end
