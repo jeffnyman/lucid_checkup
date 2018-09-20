@@ -6,7 +6,7 @@ AvoidNonContextBackgrounds:
   Enabled: true
 AvoidSingleScenarioBackgrounds:
   Enabled: true
-AvoidTooManyTags:
+AvoidTooManyScenarioTags:
   Enabled: true
 AvoidNonDeclarative:
   Enabled: true

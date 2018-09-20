@@ -12,11 +12,15 @@ module LucidCop
           example[:tableHeader][:cells].map { |cell| cell[:value] }.each do |variable|
             references = [reference(file, feature, scenario)]
             unless used?(variable, scenario)
-              add_error(references, "'<#{variable}>' is unused")
+              add_error(references, report(variable))
             end
           end
         end
       end
+    end
+
+    def report(value)
+      "the variable parameter '<#{value}>' is declared but not referenced"
     end
 
     def used?(variable, scenario)
