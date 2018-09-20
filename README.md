@@ -125,9 +125,9 @@ Scenario Outline: Simple Scenario Outline with Unused Variable
 
 Here there is a `result` variable declared in the table but that variable is never referenced in the scenario itself. The above also shows that lucidcop is able to keep track of multiple issues related to variables _and_ not confuse unused variables with missing variables. The above scenario would lead to three lucidcop violations:
 
-* the variable parameter '<result>' is declared but not referenced
-* the variable parameter '<data>' is referenced but is not declared
-* the variable parameter '<observation>' is referenced but is not declared
+* the variable parameter 'result' is declared but not referenced
+* the variable parameter 'data' is referenced but is not declared
+* the variable parameter 'observation' is referenced but is not declared
 
 **AvoidNonDeclarative**
 
